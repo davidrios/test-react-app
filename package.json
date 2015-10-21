@@ -1,0 +1,40 @@
+{
+  "name": "testreactapp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "js/app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.4.0",
+    "bower": "^1.6.3",
+    "browserify": "^11.2.0",
+    "browserify-css": "^0.7.1",
+    "envify": "^3.4.0",
+    "history": "^1.12.5",
+    "insert-css": "^0.2.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-router": "rackt/react-router#b17d5c2",
+    "stylify": "davidrios/stylify",
+    "stylus": "^0.52.4",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.4.0"
+  },
+  "scripts": {
+    "start": "watchify -t [ stylify --sourcemapInline ] -t [ envify --NODE_ENV development ] -t babelify -o public/bundle.js -v -d js/app.js",
+    "build": "browserify . | uglifyjs -cm > public/bundle.min.js"
+  },
+  "author": "David Rios",
+  "browserify": {
+    "transform": [
+      [
+        "browserify-css",
+        {
+          "autoInject": true,
+          "rebaseUrls": false
+        }
+      ]
+    ]
+  }
+}

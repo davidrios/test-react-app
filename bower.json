@@ -1,0 +1,24 @@
+{
+  "name": "testreactapp",
+  "version": "0.0.1",
+  "authors": [
+    "David Rios <david.rios.gomes@gmail.com>"
+  ],
+  "license": "Proprietary",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "spin.js": "~2.3.2",
+    "AdminLTE": "admin-lte#~2.3.0",
+    "jquery": "~2.1.4"
+  },
+  "resolutions": {
+    "jquery": "2.1"
+  }
+}
