@@ -13,6 +13,18 @@ Use this command to start watchify that will refresh the bundle with code change
 
     $ npm start
 
+If you get something like this error on Linux:
+
+    Error: watch ENOSPC
+        at errnoException (fs.js:1028:11)
+        at FSWatcher.start (fs.js:1060:11)
+        at Object.fs.watch (fs.js:1085:11)
+        at createFsWatchInstance ...
+
+You might need to increse your inotify limit:
+
+    $ sudo sysctl fs.inotify.max_user_watches=30000
+
 To open the application in the browser you just need to serve the `public` folder.
 That's easy with Python for example:
 
