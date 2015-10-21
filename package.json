@@ -22,8 +22,8 @@
     "watchify": "^3.4.0"
   },
   "scripts": {
-    "start": "watchify -t [ stylify --sourcemapInline ] -t [ envify --NODE_ENV development ] -t babelify -o public/bundle.js -v -d js/app.js",
-    "build": "browserify . | uglifyjs -cm > public/bundle.min.js"
+    "start": "watchify -t [ stylify --sourcemapInline ] -t [ envify --NODE_ENV development ] -o public/bundle.js -v -d js/app.js",
+    "build-prod": "browserify -t stylify -t [ envify --NODE_ENV production ] . | uglifyjs -cm > public/bundle.js"
   },
   "author": "David Rios",
   "browserify": {
@@ -34,7 +34,8 @@
           "autoInject": true,
           "rebaseUrls": false
         }
-      ]
+      ],
+      "babelify"
     ]
   }
 }
